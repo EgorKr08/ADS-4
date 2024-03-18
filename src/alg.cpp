@@ -37,15 +37,15 @@ int cbinsearch(int *arr, int size, int value) {
             high = mid - 1;
         } else {
             count++;
-            int iPerem = mid - 1;
-            mid++;
-            while (arr[mid] == value) {
+            int left = mid - 1;
+            int right = mid + 1;
+            while (left >= 0 && arr[left] == value) {
                 count++;
-                mid++;
+                left--;
             }
-            while (arr[iPerem] == value) {
+            while (right < size && arr[right] == value) {
                 count++;
-                iPerem--;
+                right++;
             }
             break;
         }
